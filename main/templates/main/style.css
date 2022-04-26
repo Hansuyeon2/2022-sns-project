@@ -1,0 +1,28 @@
+.title{
+    font-weight: bolder;
+    text-align: center;
+}
+.introduce {
+ font-weight: lighter;
+ text-align: center;
+}
+.center-block {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+.image { text-align: center; }
+.center-block {
+margin-right: 10%;
+margin-left : 10%;
+margin-top: 6%;
+margin-bottom: 10%;
+padding-right: 1%;
+padding-left: 1%;
+padding-top: 6%;
+padding-bottom : 6%;
+box-shadow: 0 1px 20px 0 rgb(53,69,93);
+}
+table { text-align: center;
+      margin : auto ;
+}
