@@ -13,7 +13,7 @@
                 <div align="left">
                <button type="button" class="btn btn-primary" >팔로우</button> 
                 <button type="button" class="btn btn-primary">메시지</button> 
-                <button type="button" class="btn btn-primary"><a href="{%url 'new'%}">글쓰기</a></button> 
+                <button type="button" class="btn btn-primary"><a href="{% url 'main:new' %}">글쓰기</a></button> 
                 <br><br> 
                  </div> 
                  <ul class="nav nav-tabs">
@@ -30,7 +30,7 @@
                           <h3>{{post.tktle}}</h3>
                           {{post.writer}}<br>
                           {{post.summary}}
-                          <a href="{%url 'detail' post.id %}">...자세히</a>
+                          <a href="{% url 'main:detail' post.id %}">...자세히</a>
                           <br>
                       </div>
                       {%endfor%} 
