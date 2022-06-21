@@ -57,14 +57,13 @@ def create_comment(request, post_id):
    new_comment.save() 
    return redirect('main:detail', post_id)
 
-def edit_comment(request, post_id, comment_id):
-    edit_comment = Comment.objects.get(id = id)
+def edit_comment(request, comment_id):
+    edit_comment = Comment.objects.get(id = comment_id)
     return render(request, 'main/edit_comment.html', {'comment' : edit_comment})
 
-def update_comment(request, post_id, comment_id):
-    update_comment = Post.objects.get(id=id)
+def update_comment(request, comment_id):
+    update_comment = get_object_or_404(Comment, pk = comment_id)
     update_comment.writer = request.user
-    update_comment.pub_date = timezone.now()
-    update_comment.content = request.COMMENT['content']
+    update_comment.content = request.POST['content']
     update_comment.save()
-    return redirect('main:detail', update_comment_id)    
+    return redirect('main:detail', update_comment.post_id)    
