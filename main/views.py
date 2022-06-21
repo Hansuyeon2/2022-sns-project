@@ -66,4 +66,9 @@ def update_comment(request, comment_id):
     update_comment.writer = request.user
     update_comment.content = request.POST['content']
     update_comment.save()
-    return redirect('main:detail', update_comment.post_id)    
+    return redirect('main:detail', update_comment.post.id)    
+
+def delete_comment(request, comment_id):
+    delete_comment = Comment.objects.get(pk = comment_id)
+    delete_comment.delete()
+    return redirect('main:detail')

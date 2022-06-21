@@ -34,6 +34,7 @@
         <div>
         작성자 : {{comment.writer}}
         <a href="{%url 'main:edit_comment' comment.id %}">수정하기</a>
+        <a href="{%url 'main:delete' comment.id %}">삭제하기</a>
         <br>
         {{comment.content}}
         <br><hr>
